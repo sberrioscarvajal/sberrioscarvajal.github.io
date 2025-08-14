@@ -22,7 +22,7 @@ repository               : "sberrioscarvajal/sberrioscarvajal.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "profile.jpg"
   name             : "Sebastián Berríos-Carvajal"
   pronouns         : # example: "he/him"  
   bio              : "Applied Physics PhD Candidate @ Rice University"
