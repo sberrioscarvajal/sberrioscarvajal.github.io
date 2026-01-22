@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sebastián Berríos Carvajal | Applied Physics</title>
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        .tab-btn.active { border-bottom: 2px solid #2563eb; color: #2563eb; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <!-- Hero Header -->
+    <header class="bg-[#00205B] text-white pt-16 pb-24 px-6 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-blue-500 opacity-10 rounded-full -mr-20 -mt-20"></div>
+        <div class="max-w-5xl mx-auto relative z-10">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+                <div>
+                    <div class="inline-block px-3 py-1 bg-blue-500/20 text-blue-200 rounded-full text-xs font-bold tracking-widest uppercase mb-4 border border-blue-400/30">
+                        Fulbright Scholar
+                    </div>
+                    <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-2 uppercase">
+                        Sebastián Berríos Carvajal
+                    </h1>
+                    <p class="text-xl text-blue-100 font-light max-w-2xl">
+                        Ph.D. Student in Applied Physics at Rice University • Theoretical & Computational Physics
+                    </p>
+                </div>
+                
+                <div class="flex flex-col gap-2 text-sm text-blue-100/80">
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="mail" class="w-4 h-4"></i> <a href="mailto:seba@rice.edu" class="hover:text-white transition-colors">seba@rice.edu</a>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="map-pin" class="w-4 h-4"></i> <span>Houston, TX</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="phone" class="w-4 h-4"></i> <span>+1 (346) 932 7714</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200 shadow-sm">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="flex items-center justify-start overflow-x-auto no-scrollbar gap-8 h-16">
+                <button onclick="openTab(event, 'About')" class="tab-btn active flex items-center gap-2 whitespace-nowrap px-1 h-full border-b-2 transition-all font-medium text-sm border-transparent text-slate-500 hover:text-slate-800">
+                    <i data-lucide="user" class="w-4 h-4"></i>About
+                </button>
+                <button onclick="openTab(event, 'Education')" class="tab-btn flex items-center gap-2 whitespace-nowrap px-1 h-full border-b-2 transition-all font-medium text-sm border-transparent text-slate-500 hover:text-slate-800">
+                    <i data-lucide="graduation-cap" class="w-4 h-4"></i>Education
+                </button>
+                <button onclick="openTab(event, 'Research')" class="tab-btn flex items-center gap-2 whitespace-nowrap px-1 h-full border-b-2 transition-all font-medium text-sm border-transparent text-slate-500 hover:text-slate-800">
+                    <i data-lucide="flask-conical" class="w-4 h-4"></i>Research
+                </button>
+                <button onclick="openTab(event, 'Leadership')" class="tab-btn flex items-center gap-2 whitespace-nowrap px-1 h-full border-b-2 transition-all font-medium text-sm border-transparent text-slate-500 hover:text-slate-800">
+                    <i data-lucide="users" class="w-4 h-4"></i>Leadership
+                </button>
+                <button onclick="openTab(event, 'Honors')" class="tab-btn flex items-center gap-2 whitespace-nowrap px-1 h-full border-b-2 transition-all font-medium text-sm border-transparent text-slate-500 hover:text-slate-800">
+                    <i data-lucide="award" class="w-4 h-4"></i>Honors
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-5xl mx-auto px-6 py-12 min-h-[60vh]">
+        
+        <!-- About Section -->
+        <div id="About" class="tab-content active">
+            <section class="grid md:grid-cols-3 gap-12">
+                <div class="md:col-span-2 space-y-8">
+                    <div>
+                        <h2 class="text-2xl font-bold mb-4 flex items-center gap-2 text-slate-800">
+                            Professional Summary
+                        </h2>
+                        <p class="text-lg text-slate-600 leading-relaxed">
+                            Ph.D. student in Applied Physics with a strong background in theoretical and computational physics. 
+                            I specialize in mesoscale modeling and numerical simulations of lithium-ion batteries, 
+                            using PDE-based modeling and phase-field methods to develop innovative energy storage solutions.
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="p-5 bg-white rounded-xl shadow-sm border border-slate-200">
+                            <h3 className="font-bold text-slate-800 mb-2">Computational Toolkit</h3>
+                            <div class="flex flex-wrap gap-2 mt-2">
+                                <span class="px-2 py-1 bg-slate-100 text-slate-600 text-xs font-semibold rounded uppercase">Python (KWANT)</span>
+                                <span class="px-2 py-1 bg-slate-100 text-slate-600 text-xs font-semibold rounded uppercase">FORTRAN</span>
+                                <span class="px-2 py-1 bg-slate-100 text-slate-600 text-xs font-semibold rounded uppercase">LAMMPS</span>
+                                <span class="px-2 py-1 bg-slate-100 text-slate-600 text-xs font-semibold rounded uppercase">Phase-Field</span>
+                            </div>
+                        </div>
+                        <div class="p-5 bg-white rounded-xl shadow-sm border border-slate-200">
+                            <h3 class="font-bold text-slate-800 mb-2">Research Focus</h3>
+                            <p class="text-sm text-slate-600">Mesoscale evolution, material degradation, and electrochemical-mechanical interactions.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6 bg-[#FFC72C]/10 border border-[#FFC72C]/30 rounded-2xl h-fit">
+                    <h3 class="font-bold text-[#8A6D07] mb-3 flex items-center gap-2 uppercase tracking-tight text-sm">
+                        <i data-lucide="award" class="w-4 h-4"></i> Major Recognition
+                    </h3>
+                    <p class="text-sm font-semibold text-[#8A6D07]">Fulbright-ANID BIO Doctoral Scholarship</p>
+                    <p class="text-xs text-slate-600 mt-1">Granted for doctoral studies at Rice University.</p>
+                </div>
+            </section>
+        </div>
+
+        <!-- Education Section -->
+        <div id="Education" class="tab-content">
+            <div class="relative border-l-2 border-slate-200 pl-8 ml-4 space-y-12">
+                <div class="relative">
+                    <div class="absolute -left-10 w-4 h-4 rounded-full bg-blue-600 border-4 border-white"></div>
+                    <div class="flex justify-between items-start mb-1">
+                        <h3 class="text-xl font-bold text-slate-800">Rice University</h3>
+                        <span class="text-sm font-bold text-blue-600 bg-blue-50 px-3 py-1 rounded-full">2024 — Present</span>
+                    </div>
+                    <p class="text-lg text-slate-600 italic">Applied Physics Ph.D. Degree</p>
+                </div>
+                <div class="relative">
+                    <div class="absolute -left-10 w-4 h-4 rounded-full bg-slate-300 border-4 border-white"></div>
+                    <div class="flex justify-between items-start mb-1">
+                        <h3 class="text-xl font-bold text-slate-800">Pontificia Universidad Católica de Chile</h3>
+                        <span class="text-sm font-medium text-slate-500">2020 — 2023</span>
+                    </div>
+                    <p class="text-lg text-slate-600 italic">Theoretical Physics Master's Degree</p>
+                    <p class="mt-2 text-slate-600 text-sm bg-white p-4 rounded-lg border border-slate-100 italic">"From Momentum to Real Space: Investigating the Hofstadter Butterfly..."</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Research Section -->
+        <div id="Research" class="tab-content">
+            <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm mb-6">
+                <div class="flex justify-between items-center mb-4">
+                    <span class="text-xs font-bold text-blue-600 uppercase tracking-widest">Active Research</span>
+                    <span class="text-sm text-slate-400">Dec 2024 — Present</span>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Graduate Research Assistant @ Rice University</h3>
+                <ul class="list-disc ml-5 space-y-2 text-slate-600">
+                    <li>Mesoscale modeling of lithium-ion batteries using phase-field and P2D simulations.</li>
+                    <li>Investigating microstructure evolution in battery electrodes.</li>
+                </ul>
+            </div>
+            <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+                <h3 class="text-xl font-bold mb-4">Peer-Reviewed Publications</h3>
+                <div class="p-4 bg-slate-50 rounded-xl border-l-4 border-blue-600 group">
+                    <p class="font-bold text-slate-800">Structural stability, shape memory and mechanical properties of Fe/Ni core/shell nanorods</p>
+                    <p class="text-sm text-slate-500 mt-1 italic">Journal of Alloys and Compounds, 2021</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Leadership Section -->
+        <div id="Leadership" class="tab-content">
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                    <h3 class="text-lg font-bold">Student Body President</h3>
+                    <p class="text-sm text-blue-600 mb-2">Physics and Astronomy (2018)</p>
+                    <p class="text-sm text-slate-600">Acted as bridge between students and faculty; organized weekly research conferences.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                    <h3 class="text-lg font-bold">Fulbright Ring Member</h3>
+                    <p class="text-sm text-blue-600 mb-2">Rice University (2024—Today)</p>
+                    <p class="text-sm text-slate-600">Organizing events to foster cultural exchange among international scholars.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Honors Section -->
+        <div id="Honors" class="tab-content">
+            <div class="space-y-4">
+                <div class="p-6 bg-white rounded-xl border border-slate-200 flex justify-between items-center">
+                    <div>
+                        <h3 class="font-bold">Fulbright-ANID BIO Doctoral Scholarship</h3>
+                        <p class="text-sm text-slate-500">Fulbright-Chile Commission</p>
+                    </div>
+                    <span class="font-bold text-blue-600">2024</span>
+                </div>
+                <div class="p-6 bg-white rounded-xl border border-slate-200 flex justify-between items-center">
+                    <div>
+                        <h3 class="font-bold">Matrícula Facultades (High Achievement)</h3>
+                        <p class="text-sm text-slate-500">Pontificia Universidad Católica de Chile</p>
+                    </div>
+                    <span class="font-bold text-blue-600">2021-2022</span>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 py-12 px-6">
+        <div class="max-w-5xl mx-auto flex justify-between items-center">
+            <p>© 2025 Sebastián Berríos Carvajal</p>
+            <div class="flex gap-4">
+                <a href="mailto:seba@rice.edu" class="hover:text-white"><i data-lucide="mail"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Simple Tab Logic
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+            tablinks = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
+</body>
+</html>
