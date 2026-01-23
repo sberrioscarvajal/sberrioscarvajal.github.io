@@ -118,6 +118,11 @@
                         <a href="https://linkedin.com/in/sebastian-berrios-carvajal-09921322b" target="_blank" class="flex items-center gap-2 px-5 py-2.5 bg-white/10 hover:bg-white/20 rounded-xl text-sm font-medium transition-all border border-white/10">
                             <i data-lucide="linkedin" class="w-4 h-4 text-blue-200"></i>
                         </a>
+                        
+                         <!-- Location Indicator -->
+                        <div class="flex items-center gap-2 px-5 py-2.5 bg-white/5 rounded-xl text-sm font-medium border border-white/5 text-blue-100 cursor-default">
+                            <i data-lucide="map-pin" class="w-4 h-4 text-blue-400"></i> Houston, TX
+                        </div>
                     </div>
                 </div>
             </div>
@@ -191,8 +196,10 @@
                     <div class="p-6 bg-blue-50 border border-blue-100 rounded-3xl shadow-sm">
                         <h3 class="font-bold text-rice-blue mb-4 text-xs uppercase tracking-widest">Focus Areas</h3>
                         <ul class="space-y-4 text-sm font-medium text-slate-700">
-                            <li class="flex items-center gap-3"><i data-lucide="zap" class="w-5 h-5 text-blue-500 bg-white p-1 rounded shadow-sm"></i> Energy Storage</li>
-                            <li class="flex items-center gap-3"><i data-lucide="layers" class="w-5 h-5 text-blue-500 bg-white p-1 rounded shadow-sm"></i> Mesoscale Modeling</li>
+                             <li class="flex items-center gap-3"><i data-lucide="zap" class="w-5 h-5 text-blue-500 bg-white p-1 rounded shadow-sm"></i> Battery Modeling</li>
+                             <li class="flex items-center gap-3"><i data-lucide="laptop-2" class="w-5 h-5 text-blue-500 bg-white p-1 rounded shadow-sm"></i> Computational Physics</li>
+                             <li class="flex items-center gap-3"><i data-lucide="atom" class="w-5 h-5 text-blue-500 bg-white p-1 rounded shadow-sm"></i> Condensed Matter</li>
+                             <li class="flex items-center gap-3"><i data-lucide="layers" class="w-5 h-5 text-blue-500 bg-white p-1 rounded shadow-sm"></i> Topological Systems</li>
                         </ul>
                     </div>
                 </aside>
@@ -255,10 +262,50 @@
             </div>
         </div>
 
-        <!-- Tab: Research (Updated with Improved Card) -->
+        <!-- Tab: Research (Updated with Expanded Content) -->
         <div id="Research" class="tab-content">
             <h2 class="text-3xl font-bold mb-10 text-slate-800 tracking-tight">Research & Publications</h2>
             <div class="space-y-8">
+                
+                <div class="p-8 bg-white border border-slate-200 rounded-3xl shadow-sm relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-rice-blue opacity-5 rounded-bl-full -mr-10 -mt-10"></div>
+                    <h3 class="font-bold text-slate-800 text-lg mb-4 flex items-center gap-2">
+                        <i data-lucide="microscope" class="w-5 h-5 text-rice-blue"></i> Current Research
+                    </h3>
+                    <div class="space-y-6">
+                        <div>
+                             <h4 class="text-base font-bold text-rice-blue">Mesoscale Modeling of Li-ion Batteries</h4>
+                             <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Rice University | 2024 — Present</p>
+                             <ul class="space-y-2 text-slate-600 text-sm list-disc pl-4 marker:text-blue-400">
+                                <li>Conducting mesoscale modeling focusing on phase-field and P2D simulations to understand electrochemical and mechanical degradation mechanisms.</li>
+                                <li>Developing numerical simulations for electrode microstructure evolution and lithium transport using Python-based computational frameworks.</li>
+                                <li>Investigating the asymmetry between lithiation and delithiation processes in battery materials.</li>
+                             </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-8 bg-slate-50 border border-slate-200 rounded-3xl shadow-sm">
+                    <h3 class="font-bold text-slate-800 text-lg mb-4 flex items-center gap-2">
+                        <i data-lucide="history" class="w-5 h-5 text-slate-500"></i> Previous Research
+                    </h3>
+                     <div class="space-y-8 divide-y divide-slate-200">
+                        <div class="pt-2">
+                             <h4 class="text-base font-bold text-slate-700">Topological Features in 2D Lattices</h4>
+                             <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Anillo for Light-Matter Interactions | 2020 — 2022</p>
+                             <p class="text-sm text-slate-600 mb-2">Obtained numerical results for topological features using KWANT package for PYTHON. Studied persistence of Hofstadter Butterfly pattern on a hexagonal lattice under random disorder.</p>
+                             <div class="flex gap-2"><span class="text-[10px] px-2 py-1 bg-white border border-slate-200 rounded text-slate-500">KWANT</span><span class="text-[10px] px-2 py-1 bg-white border border-slate-200 rounded text-slate-500">Python</span></div>
+                        </div>
+
+                        <div class="pt-6">
+                             <h4 class="text-base font-bold text-slate-700">Weyl Semimetals & Edge States</h4>
+                             <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Pontificia Universidad Católica de Chile | 2020</p>
+                             <p class="text-sm text-slate-600 mb-2">Reproduced results for Weyl Semimetals edge states programming a FORTRAN code for numerical estimations of eigenvalues and eigenvectors.</p>
+                             <div class="flex gap-2"><span class="text-[10px] px-2 py-1 bg-white border border-slate-200 rounded text-slate-500">Fortran</span><span class="text-[10px] px-2 py-1 bg-white border border-slate-200 rounded text-slate-500">Tight Binding</span></div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Improved Publication Card -->
                 <div class="group relative p-6 md:p-8 bg-white border border-slate-200 hover:border-blue-300 rounded-3xl shadow-sm hover:shadow-md transition-all">
                     <div class="flex flex-col md:flex-row justify-between gap-4 mb-4">
@@ -287,35 +334,32 @@
                         Read Publication <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
                     </a>
                 </div>
-                
-                <div class="p-8 bg-white border border-slate-200 rounded-3xl shadow-sm">
-                    <h3 class="font-bold text-slate-800 text-lg mb-4">Research Experience</h3>
-                    <ul class="space-y-4 text-slate-600 text-sm">
-                        <li class="flex gap-3"><i data-lucide="chevron-right" class="w-4 h-4 text-blue-500 flex-shrink-0"></i> Currently focusing on mesoscale modeling of Li-ion battery degradation at Rice University.</li>
-                        <li class="flex gap-3"><i data-lucide="chevron-right" class="w-4 h-4 text-blue-500 flex-shrink-0"></i> Performed Molecular Dynamics simulations of nanomaterials at UC Chile.</li>
-                    </ul>
-                </div>
             </div>
         </div>
 
-        <!-- Tab: Leadership -->
+        <!-- Tab: Leadership (Updated with Pizza Seminar) -->
         <div id="Leadership" class="tab-content">
             <h2 class="text-3xl font-bold mb-10 text-slate-800 tracking-tight">Leadership & Community</h2>
             <div class="grid md:grid-cols-2 gap-6">
                 <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm">
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Fulbright Ring Member</h3>
+                    <p class="text-rice-blue text-xs font-bold uppercase mb-4 tracking-wider">Rice University, 2025 — 2026</p>
+                    <p class="text-slate-600 text-sm leading-relaxed">Coordinating events to foster cultural exchange among international scholars.</p>
+                </div>
+                 <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm">
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Graduate Physics Seminar Coordinator</h3>
+                    <p class="text-rice-blue text-xs font-bold uppercase mb-4 tracking-wider">Pontificia Universidad Católica de Chile, 2021 — 2022</p>
+                    <p class="text-slate-600 text-sm leading-relaxed">Responsible for organizing the "Pizza Seminar," where graduate students presented research to colleagues, fostering academic discussion.</p>
+                </div>
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm md:col-span-2">
                     <h3 class="text-xl font-bold text-slate-800 mb-2">Student Body President</h3>
                     <p class="text-rice-blue text-xs font-bold uppercase mb-4 tracking-wider">Physics and Astronomy, 2018</p>
                     <p class="text-slate-600 text-sm leading-relaxed">Primary bridge between students and faculty; organized weekly research conferences.</p>
                 </div>
-                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm">
-                    <h3 class="text-xl font-bold text-slate-800 mb-2">Fulbright Ring Member</h3>
-                    <p class="text-rice-blue text-xs font-bold uppercase mb-4 tracking-wider">Rice University, 2024 — Present</p>
-                    <p class="text-slate-600 text-sm leading-relaxed">Coordinating events to foster cultural exchange among international scholars.</p>
-                </div>
             </div>
         </div>
 
-        <!-- Tab: Honors -->
+        <!-- Tab: Honors (Updated Scholarship Date) -->
         <div id="Honors" class="tab-content">
             <h2 class="text-3xl font-bold mb-10 text-slate-800 tracking-tight">Honors & Awards</h2>
             <div class="space-y-4">
@@ -324,7 +368,7 @@
                         <h3 class="text-xl font-bold text-slate-800">Fulbright-ANID BIO Doctoral Scholarship</h3>
                         <p class="text-sm text-slate-500 italic">Fulbright-Chile Commission</p>
                     </div>
-                    <span class="text-2xl font-black text-slate-200 italic">2024</span>
+                    <span class="text-2xl font-black text-slate-200 italic">2024 — 2028</span>
                 </div>
                 <div class="p-8 bg-white rounded-3xl border border-slate-200 shadow-sm flex flex-col md:flex-row justify-between items-start md:items-center gap-4 border-l-8 border-l-blue-400">
                     <div>
