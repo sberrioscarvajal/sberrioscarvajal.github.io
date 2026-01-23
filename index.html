@@ -10,14 +10,14 @@
     <meta name="keywords" content="Sebastián Berríos Carvajal, Sebastián Alejandro Berríos Carvajal, Sebastian Berrios, Rice University, PhD, Applied Physics, Fulbright Scholar Chile, Battery Modeling">
     <meta name="author" content="Sebastián Berríos Carvajal">
     
-    <!-- JSON-LD Structured Data (The "Identity Linker") -->
+    <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org/",
       "@type": "Person",
       "name": "Sebastián Berríos Carvajal",
       "alternateName": "Sebastián Alejandro Berríos Carvajal",
-      "url": "https://sberrioscarvajal.github.io",
+      "url": "https://your-website-url.com/",
       "image": "https://your-website-url.com/IMG_4772.jpeg",
       "jobTitle": "Ph.D. Student",
       "affiliation": {
@@ -36,36 +36,60 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Rice University Branding Config -->
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                rice: {
+                  blue: '#00205B', // Official Rice Blue
+                  gray: '#7C7E7F', // Official Rice Gray
+                  light: '#C1C6C8'
+                }
+              },
+              fontFamily: {
+                sans: ['Inter', 'sans-serif'],
+              }
+            }
+          }
+        }
+    </script>
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
         body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .tab-content { display: none; }
         .tab-content.active { display: block; animation: fadeIn 0.4s ease-out; }
-        .tab-btn.active { border-bottom: 2px solid #3b82f6; color: #3b82f6; }
+        /* Note: Active border color is now handled by inline styles in JS to match Rice Blue */
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900 leading-relaxed">
 
-    <!-- Navigation -->
+    <!-- Navigation (Updated with ARIA roles and Rice Colors) -->
     <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm">
-        <div class="max-w-5xl mx-auto px-6">
+        <div class="max-w-5xl mx-auto px-4 md:px-6">
             <div class="flex items-center justify-between h-16">
-                <div class="font-bold text-blue-900 text-sm tracking-tighter uppercase">S. Berríos Carvajal</div>
-                <div class="flex items-center gap-6 overflow-x-auto no-scrollbar">
-                    <button onclick="openTab(event, 'About')" class="tab-btn active px-1 py-5 text-sm font-semibold border-b-2 border-transparent text-slate-500 hover:text-blue-600 transition-all">Overview</button>
-                    <button onclick="openTab(event, 'Education')" class="tab-btn px-1 py-5 text-sm font-semibold border-b-2 border-transparent text-slate-500 hover:text-blue-600 transition-all">Education</button>
-                    <button onclick="openTab(event, 'Research')" class="tab-btn px-1 py-5 text-sm font-semibold border-b-2 border-transparent text-slate-500 hover:text-blue-600 transition-all">Research</button>
-                    <button onclick="openTab(event, 'Leadership')" class="tab-btn px-1 py-5 text-sm font-semibold border-b-2 border-transparent text-slate-500 hover:text-blue-600 transition-all">Leadership</button>
-                    <button onclick="openTab(event, 'Honors')" class="tab-btn px-1 py-5 text-sm font-semibold border-b-2 border-transparent text-slate-500 hover:text-blue-600 transition-all">Honors</button>
+                <!-- Mobile: Hide name if screen is too small to prevent overlapping tabs -->
+                <div class="hidden md:block font-bold text-rice-blue text-sm tracking-tighter uppercase">S. Berríos Carvajal</div>
+                
+                <!-- Tab Container -->
+                <div class="flex items-center gap-1 overflow-x-auto no-scrollbar w-full md:w-auto" role="tablist">
+                    <button onclick="openTab(event, 'About')" role="tab" aria-selected="true" class="tab-btn active px-4 py-5 text-sm font-medium border-b-2 border-rice-blue text-rice-blue whitespace-nowrap transition-all">Overview</button>
+                    <button onclick="openTab(event, 'Education')" role="tab" aria-selected="false" class="tab-btn px-4 py-5 text-sm font-medium border-b-2 border-transparent text-slate-500 hover:text-rice-blue whitespace-nowrap transition-all">Education</button>
+                    <button onclick="openTab(event, 'Research')" role="tab" aria-selected="false" class="tab-btn px-4 py-5 text-sm font-medium border-b-2 border-transparent text-slate-500 hover:text-rice-blue whitespace-nowrap transition-all">Research</button>
+                    <button onclick="openTab(event, 'Leadership')" role="tab" aria-selected="false" class="tab-btn px-4 py-5 text-sm font-medium border-b-2 border-transparent text-slate-500 hover:text-rice-blue whitespace-nowrap transition-all">Leadership</button>
+                    <button onclick="openTab(event, 'Honors')" role="tab" aria-selected="false" class="tab-btn px-4 py-5 text-sm font-medium border-b-2 border-transparent text-slate-500 hover:text-rice-blue whitespace-nowrap transition-all">Honors</button>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- Header -->
-    <header class="bg-[#00205B] text-white py-16 px-6 relative overflow-hidden">
+    <!-- Header (Updated with Download CV button) -->
+    <header class="bg-rice-blue text-white py-16 px-6 relative overflow-hidden">
         <div class="absolute top-0 right-0 w-96 h-96 bg-blue-500 opacity-10 rounded-full -mr-20 -mt-20"></div>
         <div class="max-w-5xl mx-auto relative z-10">
             <div class="flex flex-col md:flex-row items-center gap-10">
@@ -79,12 +103,20 @@
                     <p class="text-xl md:text-2xl text-blue-100 font-light mb-8 italic">
                         Applied Physics Ph.D. Student @ Rice University
                     </p>
-                    <div class="flex flex-wrap justify-center md:justify-start gap-4">
+                    
+                    <!-- Updated Action Buttons -->
+                    <div class="flex flex-wrap justify-center md:justify-start gap-3">
+                        <!-- Primary Action: Download CV -->
+                        <a href="resume.pdf" target="_blank" class="flex items-center gap-2 px-6 py-2.5 bg-blue-500 hover:bg-blue-400 text-white rounded-xl text-sm font-bold transition-all shadow-lg shadow-blue-900/50">
+                            <i data-lucide="file-text" class="w-4 h-4"></i> Download CV
+                        </a>
+                        
+                        <!-- Secondary Actions -->
                         <a href="mailto:seba@rice.edu" class="flex items-center gap-2 px-5 py-2.5 bg-white/10 hover:bg-white/20 rounded-xl text-sm font-medium transition-all border border-white/10">
-                            <i data-lucide="mail" class="w-4 h-4 text-blue-300"></i> seba@rice.edu
+                            <i data-lucide="mail" class="w-4 h-4 text-blue-200"></i> Email
                         </a>
                         <a href="https://linkedin.com/in/sebastian-berrios-carvajal-09921322b" target="_blank" class="flex items-center gap-2 px-5 py-2.5 bg-white/10 hover:bg-white/20 rounded-xl text-sm font-medium transition-all border border-white/10">
-                            <i data-lucide="linkedin" class="w-4 h-4 text-blue-300"></i> LinkedIn
+                            <i data-lucide="linkedin" class="w-4 h-4 text-blue-200"></i>
                         </a>
                     </div>
                 </div>
@@ -105,12 +137,12 @@
                     </section>
 
                     <section>
-                        <h3 class="font-bold text-blue-900 mb-6 text-xs uppercase tracking-widest flex items-center gap-2">
+                        <h3 class="font-bold text-rice-blue mb-6 text-xs uppercase tracking-widest flex items-center gap-2">
                             <i data-lucide="megaphone" class="w-4 h-4 text-blue-500"></i> Recent Developments
                         </h3>
                         <div class="space-y-4">
                             <div class="p-4 bg-white rounded-xl border border-slate-200 shadow-sm relative overflow-hidden group">
-                                <div class="absolute left-0 top-0 bottom-0 w-1 bg-blue-500"></div>
+                                <div class="absolute left-0 top-0 bottom-0 w-1 bg-rice-blue"></div>
                                 <span class="text-[10px] font-bold text-slate-400 uppercase tracking-tighter">January 2025</span>
                                 <h4 class="font-bold text-slate-800 text-sm mt-1">Starting PhD Research at Tang Group</h4>
                                 <p class="text-xs text-slate-500 mt-1 leading-relaxed">Officially began focusing on mesoscale modeling of Li-ion battery degradation mechanisms.</p>
@@ -120,21 +152,21 @@
 
                     <section class="grid sm:grid-cols-2 gap-6">
                         <div class="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm">
-                            <h3 class="font-bold text-blue-900 mb-4 text-xs uppercase tracking-widest flex items-center gap-2">
+                            <h3 class="font-bold text-rice-blue mb-4 text-xs uppercase tracking-widest flex items-center gap-2">
                                 <i data-lucide="brain-circuit" class="w-4 h-4"></i> Technical Proficiencies
                             </h3>
                             <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1 bg-blue-50 text-blue-700 text-[11px] font-bold rounded-lg border border-blue-100 uppercase tracking-tighter">Theoretical Physics</span>
-                                <span class="px-3 py-1 bg-blue-50 text-blue-700 text-[11px] font-bold rounded-lg border border-blue-100 uppercase tracking-tighter">Python</span>
-                                <span class="px-3 py-1 bg-blue-50 text-blue-700 text-[11px] font-bold rounded-lg border border-blue-100 uppercase tracking-tighter">COMSOL</span>
-                                <span class="px-3 py-1 bg-blue-50 text-blue-700 text-[11px] font-bold rounded-lg border border-blue-100 uppercase tracking-tighter">Fortran</span>
-                                <span class="px-3 py-1 bg-blue-50 text-blue-700 text-[11px] font-bold rounded-lg border border-blue-100 uppercase tracking-tighter">Phase-Field</span>
-                                <span class="px-3 py-1 bg-blue-50 text-blue-700 text-[11px] font-bold rounded-lg border border-blue-100 uppercase tracking-tighter">Molecular Dynamics</span>
-                                <span class="px-3 py-1 bg-blue-50 text-blue-700 text-[11px] font-bold rounded-lg border border-blue-100 uppercase tracking-tighter">DFT</span>
+                                <span class="px-3 py-1 bg-blue-50 text-rice-blue text-[11px] font-bold rounded-lg border border-blue-100 uppercase tracking-tighter">Theoretical Physics</span>
+                                <span class="px-3 py-1 bg-blue-50 text-rice-blue text-[11px] font-bold rounded-lg border border-blue-100 uppercase tracking-tighter">Python</span>
+                                <span class="px-3 py-1 bg-blue-50 text-rice-blue text-[11px] font-bold rounded-lg border border-blue-100 uppercase tracking-tighter">COMSOL</span>
+                                <span class="px-3 py-1 bg-blue-50 text-rice-blue text-[11px] font-bold rounded-lg border border-blue-100 uppercase tracking-tighter">Fortran</span>
+                                <span class="px-3 py-1 bg-blue-50 text-rice-blue text-[11px] font-bold rounded-lg border border-blue-100 uppercase tracking-tighter">Phase-Field</span>
+                                <span class="px-3 py-1 bg-blue-50 text-rice-blue text-[11px] font-bold rounded-lg border border-blue-100 uppercase tracking-tighter">Molecular Dynamics</span>
+                                <span class="px-3 py-1 bg-blue-50 text-rice-blue text-[11px] font-bold rounded-lg border border-blue-100 uppercase tracking-tighter">DFT</span>
                             </div>
                         </div>
                         <div class="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm">
-                            <h3 class="font-bold text-blue-900 mb-4 text-xs uppercase tracking-widest flex items-center gap-2">
+                            <h3 class="font-bold text-rice-blue mb-4 text-xs uppercase tracking-widest flex items-center gap-2">
                                 <i data-lucide="languages" class="w-4 h-4"></i> Languages
                             </h3>
                             <div class="space-y-3">
@@ -157,7 +189,7 @@
                 
                 <aside class="space-y-6">
                     <div class="p-6 bg-blue-50 border border-blue-100 rounded-3xl shadow-sm">
-                        <h3 class="font-bold text-blue-900 mb-4 text-xs uppercase tracking-widest">Focus Areas</h3>
+                        <h3 class="font-bold text-rice-blue mb-4 text-xs uppercase tracking-widest">Focus Areas</h3>
                         <ul class="space-y-4 text-sm font-medium text-slate-700">
                             <li class="flex items-center gap-3"><i data-lucide="zap" class="w-5 h-5 text-blue-500 bg-white p-1 rounded shadow-sm"></i> Energy Storage</li>
                             <li class="flex items-center gap-3"><i data-lucide="layers" class="w-5 h-5 text-blue-500 bg-white p-1 rounded shadow-sm"></i> Mesoscale Modeling</li>
@@ -173,10 +205,10 @@
             <div class="relative border-l-2 border-slate-200 pl-8 ml-4 space-y-12">
                 <!-- Rice University -->
                 <div class="relative">
-                    <div class="absolute -left-10 w-4 h-4 rounded-full bg-blue-600 border-4 border-white ring-4 ring-blue-50"></div>
+                    <div class="absolute -left-10 w-4 h-4 rounded-full bg-rice-blue border-4 border-white ring-4 ring-blue-50"></div>
                     <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-1">
                         <h3 class="text-xl font-extrabold text-slate-800">Rice University</h3>
-                        <span class="text-xs font-black text-blue-600 bg-blue-50 px-3 py-1 rounded-full border border-blue-100 uppercase">2024 — Present</span>
+                        <span class="text-xs font-black text-rice-blue bg-blue-50 px-3 py-1 rounded-full border border-blue-100 uppercase">2024 — Present</span>
                     </div>
                     <p class="text-md text-slate-600 font-semibold italic">Applied Physics Ph.D. Candidate</p>
                     <p class="text-sm text-slate-500 mt-1">Houston, Texas</p>
@@ -198,7 +230,7 @@
                             <strong>Advisor:</strong> Dr. Rodrigo Soto <br>
                             <strong>Co-Advisor:</strong> Dr. Enrique Muñoz
                         </p>
-                        <span class="inline-block text-[10px] font-black text-blue-600 uppercase tracking-widest bg-blue-50 px-2 py-0.5 rounded">Conferred with Maximum Distinction</span>
+                        <span class="inline-block text-[10px] font-black text-rice-blue uppercase tracking-widest bg-blue-50 px-2 py-0.5 rounded">Conferred with Maximum Distinction</span>
                     </div>
                 </div>
 
@@ -217,21 +249,42 @@
                         <p class="text-sm text-slate-600">
                             <strong>Advisor:</strong> Dr. Rodrigo Soto
                         </p>
-                        <span class="inline-block text-[10px] font-black text-blue-600 uppercase tracking-widest bg-blue-50 px-2 py-0.5 rounded">Conferred with Maximum Distinction</span>
+                        <span class="inline-block text-[10px] font-black text-rice-blue uppercase tracking-widest bg-blue-50 px-2 py-0.5 rounded">Conferred with Maximum Distinction</span>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Tab: Research -->
+        <!-- Tab: Research (Updated with Improved Card) -->
         <div id="Research" class="tab-content">
             <h2 class="text-3xl font-bold mb-10 text-slate-800 tracking-tight">Research & Publications</h2>
             <div class="space-y-8">
-                <div class="p-8 bg-[#00205B] text-white rounded-3xl shadow-xl">
-                    <p class="text-xl font-extrabold leading-snug mb-2 text-blue-50">Structural stability, shape memory and mechanical properties of Fe/Ni core/shell nanorods</p>
-                    <p class="text-blue-300 italic font-medium mb-6">Journal of Alloys and Compounds, 2021</p>
-                    <a href="https://doi.org/10.1016/j.jallcom.2021.160206" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-500 rounded-xl text-xs font-black transition-colors uppercase tracking-widest">
-                        <i data-lucide="external-link" class="w-4 h-4"></i> View DOI
+                <!-- Improved Publication Card -->
+                <div class="group relative p-6 md:p-8 bg-white border border-slate-200 hover:border-blue-300 rounded-3xl shadow-sm hover:shadow-md transition-all">
+                    <div class="flex flex-col md:flex-row justify-between gap-4 mb-4">
+                        <div class="flex gap-2">
+                            <span class="px-3 py-1 bg-green-50 text-green-700 text-[10px] font-bold uppercase tracking-wider rounded-full border border-green-100">Published</span>
+                            <span class="px-3 py-1 bg-slate-50 text-slate-600 text-[10px] font-bold uppercase tracking-wider rounded-full border border-slate-100">2021</span>
+                        </div>
+                        <span class="text-xs font-serif italic text-slate-400">Journal of Alloys and Compounds</span>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold text-slate-800 mb-3 leading-tight group-hover:text-rice-blue transition-colors">
+                        Structural stability, shape memory and mechanical properties of Fe/Ni core/shell nanorods
+                    </h3>
+                    
+                    <p class="text-sm text-slate-600 mb-6 leading-relaxed">
+                        Investigated the mechanical properties and shape memory effects using molecular dynamics simulations.
+                    </p>
+
+                    <!-- Tech Stack Used -->
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="text-[10px] px-2 py-1 bg-slate-100 text-slate-600 rounded font-mono">Molecular Dynamics</span>
+                        <span class="text-[10px] px-2 py-1 bg-slate-100 text-slate-600 rounded font-mono">LAMMPS</span>
+                    </div>
+
+                    <a href="https://doi.org/10.1016/j.jallcom.2021.160206" target="_blank" class="inline-flex items-center gap-2 text-sm font-bold text-blue-600 hover:underline">
+                        Read Publication <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
                     </a>
                 </div>
                 
@@ -251,12 +304,12 @@
             <div class="grid md:grid-cols-2 gap-6">
                 <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm">
                     <h3 class="text-xl font-bold text-slate-800 mb-2">Student Body President</h3>
-                    <p class="text-blue-600 text-xs font-bold uppercase mb-4 tracking-wider">Physics and Astronomy, 2018</p>
+                    <p class="text-rice-blue text-xs font-bold uppercase mb-4 tracking-wider">Physics and Astronomy, 2018</p>
                     <p class="text-slate-600 text-sm leading-relaxed">Primary bridge between students and faculty; organized weekly research conferences.</p>
                 </div>
                 <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm">
                     <h3 class="text-xl font-bold text-slate-800 mb-2">Fulbright Ring Member</h3>
-                    <p class="text-blue-600 text-xs font-bold uppercase mb-4 tracking-wider">Rice University, 2024 — Present</p>
+                    <p class="text-rice-blue text-xs font-bold uppercase mb-4 tracking-wider">Rice University, 2024 — Present</p>
                     <p class="text-slate-600 text-sm leading-relaxed">Coordinating events to foster cultural exchange among international scholars.</p>
                 </div>
             </div>
@@ -292,20 +345,45 @@
             <a href="mailto:seba@rice.edu" class="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center hover:bg-blue-600 transition-all"><i data-lucide="mail" class="w-5 h-5"></i></a>
             <a href="https://linkedin.com/in/sebastian-berrios-carvajal-09921322b" class="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center hover:bg-blue-600 transition-all"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
         </div>
-        <p class="text-slate-500 text-[10px] mt-10 uppercase tracking-widest font-bold">© 2026 • Designed for Academic Impact</p>
+        <p class="text-slate-500 text-[10px] mt-10 uppercase tracking-widest font-bold">© 2025 • Designed for Academic Impact</p>
     </footer>
 
+    <!-- Updated Script for Tabs and ARIA logic -->
     <script>
+        // Initialize Icons
         lucide.createIcons();
+    
         function openTab(evt, tabName) {
             var i, tabcontent, tablinks;
+            
+            // Hide all tab contents
             tabcontent = document.getElementsByClassName("tab-content");
-            for (i = 0; i < tabcontent.length; i++) { tabcontent[i].classList.remove("active"); }
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+            
+            // Deactivate all buttons and update ARIA
             tablinks = document.getElementsByClassName("tab-btn");
-            for (i = 0; i < tablinks.length; i++) { tablinks[i].classList.remove("active"); }
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+                tablinks[i].setAttribute("aria-selected", "false"); 
+                tablinks[i].style.borderColor = "transparent";
+                tablinks[i].style.color = "#64748b"; // slate-500
+            }
+            
+            // Show current tab
             document.getElementById(tabName).classList.add("active");
+            
+            // Activate current button with Rice Blue
             evt.currentTarget.classList.add("active");
+            evt.currentTarget.setAttribute("aria-selected", "true");
+            evt.currentTarget.style.borderColor = "#00205B"; // Rice Blue
+            evt.currentTarget.style.color = "#00205B";       // Rice Blue
+            
+            // Re-render icons for the new content
             lucide.createIcons();
+            
+            // Scroll to top of content
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     </script>
